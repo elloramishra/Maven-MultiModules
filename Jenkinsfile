@@ -14,9 +14,11 @@ node {
 
           sh 'mvn clean install'
        }
-	   
-    
-	    
+	stage('sonar'){
+		
+	  sh 'mvn sonar:sonar'
+	}
+   
 	stage('Checkstyle') {
                     sh 'mvn checkstyle:checkstyle'
                 }
